@@ -25,7 +25,7 @@
 
 | 多轮对话示例 | 模型切换界面 |
 |--------------|--------------|
-| <img src="./picture/法律咨询02.png" alt="多轮对话" width="500" height="350"/> | <img src="./picture/法务咨询03.png" alt="模型切换" width="500" height="350"/> |
+| <img src="./picture/法律咨询02.png" alt="多轮对话" width="500" /> | <img src="./picture/法务咨询03.png" alt="模型切换" width="500" /> |
 
 - 对话历史保存在数据库
 - 支持清空对话、重新生成回答
@@ -60,7 +60,7 @@
 
 | 知识库管理 | 咨询历史管理 |
 |------------|--------------|
-| <img src="./picture/知识库.png" alt="知识库管理界面" width="500" height="350"/> | <img src="./picture/咨询历史.png" alt="咨询历史界面" width="500" height="350"/> |
+| <img src="./picture/知识库.png" alt="知识库管理界面" width="500" /> | <img src="./picture/咨询历史.png" alt="咨询历史界面" width="500" /> |
 | - 基于 `backend/knowledge_base/` 目录的离线知识库系统<br>- 向量化存储支持语义检索<br>- 与合同诊断功能深度集成，提供精准风险识别 | - 完整记录企业调查表的历史修改记录<br>- 保存每次LLM生成的法律建议和分析报告<br>- 提供数据分析和趋势报告功能 |
 
 
