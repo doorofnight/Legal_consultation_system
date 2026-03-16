@@ -138,14 +138,10 @@ venv\Scripts\activate  # Windows
 pip install --upgrade pip
 pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 
-# 5. 检查环境配置文件
-# 确保 .env 文件已正确配置
-# 如果 .env 文件不存在，需要手动创建并配置数据库和AI模型
-
-# 6. 初始化数据库表（需要PostgreSQL服务已启动）
+# 5. 初始化数据库表（需要PostgreSQL服务已启动）
 python -c "from app.db.session import engine; from app.db.base import Base; Base.metadata.create_all(bind=engine); print('数据库表创建完成')"
 
-# 7. 启动后端服务
+# 6. 启动后端服务
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
