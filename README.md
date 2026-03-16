@@ -56,7 +56,7 @@
 - 标注风险条款并给出修改建议
 - 知识库完全离线运行，不依赖外部API（可使用本地Ollama模型）
 
-## 📚 第四阶段：知识库与咨询历史（规划中）
+## ⏳ 第四阶段：知识库与咨询历史（开发中）
 
 ### 知识库管理
 ![知识库管理界面](./picture/知识库.png)
@@ -87,32 +87,7 @@ git clone <https://github.com/doorofnight/Legal_consultation_system.git>
 cd Legal_consultation_system
 ```
 
-### 2. 后端部署
-
-#### 使用脚本启动 (Windows，推荐)
-```bash
-cd backend
-start.bat
-```
-
-#### 手动启动
-```bash
-cd backend
-
-# 创建虚拟环境
-python -m venv venv
-venv\Scripts\activate  # Windows
-# source venv/bin/activate  # Linux/Mac
-
-# 安装依赖
-pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
-
-# 配置环境变量
-copy .env.example .env
-# 编辑 .env 文件，配置数据库连接和AI模型
-```
-
-#### 环境变量配置
+### 2. 环境变量配置
 编辑 `backend/.env` 文件，配置以下内容：
 
 **数据库配置**：
@@ -125,6 +100,14 @@ POSTGRES_DATABASE="legal_consultation"
 ```
 
 **AI模型配置**（二选一）：
+
+```env
+# 默认模型提供商
+DEFAULT_MODEL_PROVIDER="siliconflow"  # siliconflow, ollama
+# 嵌入模型提供商
+EMBEDDING_MODEL_PROVIDER="siliconflow"  # siliconflow, ollama
+```
+
 1. **SiliconFlow（云端）**：
 ```env
 SILICONFLOW_API_KEY="你的密钥"
@@ -138,23 +121,55 @@ OLLAMA_BASE_URL="http://localhost:11434"
 OLLAMA_MODEL="deepseek-r1:1.5b"
 ```
 
-#### 启动服务
+### 3. 后端部署
+
+1. **使用脚本启动 (Windows，推荐)**：
 ```bash
-# 启动后端服务
+cd backend
+start.bat
+```
+
+2. **手动启动**：
+```bash
+cd backend
+
+# 1. 检查Python环境（可选）
+python --version
+
+# 2. 创建虚拟环境（如果不存在）
+python -m venv venv
+
+# 3. 激活虚拟环境
+venv\Scripts\activate  # Windows
+# source venv/bin/activate  # Linux/Mac
+
+# 4. 升级pip并安装依赖
+pip install --upgrade pip
+pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+
+# 5. 检查环境配置文件
+# 确保 .env 文件已正确配置
+# 如果 .env 文件不存在，需要手动创建并配置数据库和AI模型
+
+# 6. 初始化数据库表（需要PostgreSQL服务已启动）
+python -c "from app.db.session import engine; from app.db.base import Base; Base.metadata.create_all(bind=engine); print('数据库表创建完成')"
+
+# 7. 启动后端服务
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### 3. 前端部署
+### 4. 前端部署
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-### 4. 访问应用
+### 5. 访问应用
 - 前端: http://localhost:5173
 - 后端API: http://localhost:8000
-- API文档: http://localhost:8000/docs
+- API 调试工具：http://localhost:8000/docs
+- API 说明文档：http://localhost:8000/redoc
 
 ## 📊 API接口
 
@@ -172,12 +187,6 @@ npm run dev
 |------|------|------|
 | `GET` | `/api/v1/chat/health` | 健康检查 |
 | `GET` | `/api/v1/chat/config` | 获取配置 |
-
-### API文档
-启动服务后访问：
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
-```
 
 ## 🏗️ 项目结构
 
