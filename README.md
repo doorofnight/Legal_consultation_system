@@ -83,8 +83,8 @@
 
 ### 1. 克隆项目
 ```bash
-git clone <https://github.com/doorofnight/Legal_consulattion_system.git>
-cd Legal_consulattion_system
+git clone <https://github.com/doorofnight/Legal_consultation_system.git>
+cd Legal_consultation_system
 ```
 
 ### 2. 后端部署
@@ -182,7 +182,7 @@ npm run dev
 ## 🏗️ 项目结构
 
 ```
-Legal_consulattion_system/                    # 项目根目录
+Legal_consultation_system/                    # 项目根目录
 ├── backend/                                  # FastAPI后端服务
 │   ├── app/                                  # 应用主目录
 │   │   ├── api/v1/                           # API路由层
