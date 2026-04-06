@@ -28,13 +28,6 @@
 
 ## 🏗️ 功能模块
 
-### 系统主界面预览
-<div align="center">
-  <img src="picture/home.png" alt="AI法律咨询系统主界面" width="800">
-  <br>
-  <em>图：AI法律咨询系统主界面</em>
-</div>
-
 ### 1. 法务咨询聊天功能（已完成）
 - 支持多轮对话，可切换LLM提供商（SiliconFlow/Ollama）
 - 对话历史保存在数据库
