@@ -1,0 +1,128 @@
+[
+  {
+    "id": "8a94ebbd30431a1cefc221189779e363",
+    "path": "合同案例\\劳动合同模板.md",
+    "filename": "劳动合同模板.md",
+    "category": "合同案例",
+    "embedding_dim": 4096,
+    "content_length": 1160,
+    "embedding_file": "8a94ebbd30431a1cefc221189779e363.json"
+  },
+  {
+    "id": "81db64656040d3b64df9171cbee2ebd3",
+    "path": "合同案例\\服务合同模板.md",
+    "filename": "服务合同模板.md",
+    "category": "合同案例",
+    "embedding_dim": 4096,
+    "content_length": 1204,
+    "embedding_file": "81db64656040d3b64df9171cbee2ebd3.json"
+  },
+  {
+    "id": "5945aa85946d3bf7efb604a219bd2d14",
+    "path": "合同案例\\租赁合同模板.md",
+    "filename": "租赁合同模板.md",
+    "category": "合同案例",
+    "embedding_dim": 4096,
+    "content_length": 1177,
+    "embedding_file": "5945aa85946d3bf7efb604a219bd2d14.json"
+  },
+  {
+    "id": "1cd2f627c5a212e6392b286a960f3229",
+    "path": "合同案例\\销售合同模板.md",
+    "filename": "销售合同模板.md",
+    "category": "合同案例",
+    "embedding_dim": 4096,
+    "content_length": 1120,
+    "embedding_file": "1cd2f627c5a212e6392b286a960f3229.json"
+  },
+  {
+    "id": "ade0ace543a17b550b18c3979e196918",
+    "path": "案例分析\\劳动合同纠纷案例.md",
+    "filename": "劳动合同纠纷案例.md",
+    "category": "案例分析",
+    "embedding_dim": 4096,
+    "content_length": 251,
+    "embedding_file": "ade0ace543a17b550b18c3979e196918.json"
+  },
+  {
+    "id": "80287cedfef4ffdd4ce30a878a8bce43",
+    "path": "案例分析\\合同纠纷案例.md",
+    "filename": "合同纠纷案例.md",
+    "category": "案例分析",
+    "embedding_dim": 4096,
+    "content_length": 669,
+    "embedding_file": "80287cedfef4ffdd4ce30a878a8bce43.json"
+  },
+  {
+    "id": "fec6d45d1154a03dc5b772927436b0bf",
+    "path": "案例分析\\知识产权案例.md",
+    "filename": "知识产权案例.md",
+    "category": "案例分析",
+    "embedding_dim": 4096,
+    "content_length": 901,
+    "embedding_file": "fec6d45d1154a03dc5b772927436b0bf.json"
+  },
+  {
+    "id": "185be6873e9b6fc4b25d41dea6c96d4e",
+    "path": "法律指南\\企业合规指南.md",
+    "filename": "企业合规指南.md",
+    "category": "法律指南",
+    "embedding_dim": 4096,
+    "content_length": 799,
+    "embedding_file": "185be6873e9b6fc4b25d41dea6c96d4e.json"
+  },
+  {
+    "id": "c09bad31a013231ff7ed6e212aff9471",
+    "path": "法律指南\\法律程序指南.md",
+    "filename": "法律程序指南.md",
+    "category": "法律指南",
+    "embedding_dim": 4096,
+    "content_length": 749,
+    "embedding_file": "c09bad31a013231ff7ed6e212aff9471.json"
+  },
+  {
+    "id": "1aa7d0fb996b89b897ab7da4bb5b6e43",
+    "path": "法律指南\\法律风险防范指南.md",
+    "filename": "法律风险防范指南.md",
+    "category": "法律指南",
+    "embedding_dim": 4096,
+    "content_length": 966,
+    "embedding_file": "1aa7d0fb996b89b897ab7da4bb5b6e43.json"
+  },
+  {
+    "id": "738b5d104fc66cc1753ebfe71486095f",
+    "path": "法律文件\\公司法总则.md",
+    "filename": "公司法总则.md",
+    "category": "法律文件",
+    "embedding_dim": 4096,
+    "content_length": 802,
+    "embedding_file": "738b5d104fc66cc1753ebfe71486095f.json"
+  },
+  {
+    "id": "e7536195e709bec2f3c3c82e46f81675",
+    "path": "法律文件\\劳动争议调解仲裁法.md",
+    "filename": "劳动争议调解仲裁法.md",
+    "category": "法律文件",
+    "embedding_dim": 4096,
+    "content_length": 270,
+    "embedding_file": "e7536195e709bec2f3c3c82e46f81675.json"
+  },
+  {
+    "id": "f5f4aca03a5207b4b5f6028e2d007225",
+    "path": "法律文件\\合同法总则.md",
+    "filename": "合同法总则.md",
+    "category": "法律文件",
+    "embedding_dim": 4096,
+    "content_length": 628,
+    "embedding_file": "f5f4aca03a5207b4b5f6028e2d007225.json"
+  },
+  {
+    "id": "3bded3993ba581bf1b9d9dd133aa2840",
+    "path": "法律文件\\民法典总则.md",
+    "filename": "民法典总则.md",
+    "category": "法律文件",
+    "embedding_dim": 4096,
+    "content_length": 670,
+    "embedding_file": "3bded3993ba581bf1b9d9dd133aa2840.json"
+  }
+]

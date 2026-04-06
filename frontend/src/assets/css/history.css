@@ -1,0 +1,128 @@
+/* History.vue专用样式 */
+
+/* 主容器 */
+.history-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* 头部卡片 */
+.history-header-card {
+  margin-bottom: var(--spacing-lg);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.history-subtitle {
+  margin-top: var(--spacing-sm);
+}
+
+.history-subtitle p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.history-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.documents-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.documents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.documents-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* 会话标题单元格 */
+.session-title-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* 调查历史和合同历史区域 */
+.survey-history,
+.contract-history {
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+/* 空状态样式 */
+.empty-history {
+  text-align: center;
+  color: var(--text-light);
+  padding: var(--spacing-xl) 0;
+}
+
+.empty-history h4 {
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.empty-history p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.header-refresh-btn:hover {
+  background-color: var(--bg-tertiary);
+  transform: translateY(-1px);
+}
+
+.header-refresh-btn:active {
+  transform: translateY(0);
+}
+
+/* 恢复三个卡片中图标的默认形状 */
+.documents-card .documents-header .header-left .el-icon {
+  width: auto !important;
+  height: auto !important;
+  font-size: inherit !important;
+  border-radius: 0 !important;
+  background: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: inherit !important;
+  box-shadow: none !important;
+}
+
+/* 确保图标大小适中 */
+.documents-card .documents-header .header-left .el-icon svg {
+  width: 20px;
+  height: 20px;
+}
+

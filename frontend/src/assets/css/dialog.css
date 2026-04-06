@@ -1,0 +1,554 @@
+/* 弹窗通用样式 - 用于所有弹窗组件 */
+
+/* 弹窗内容区域通用样式 */
+.dialog-content {
+  padding: 10px 0;
+}
+
+/* 弹窗头部样式 */
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+/* 弹窗列表容器 */
+.dialog-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* 弹窗表单样式 */
+.dialog-form {
+  padding: 10px;
+}
+
+/* 弹窗字段区域 */
+.fields-section {
+  border: 1px solid #ebeef5;
+  border-radius: 4px;
+  padding: 15px;
+  background-color: #f8f9fa;
+}
+
+.fields-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ebeef5;
+}
+
+.fields-header-left h4 {
+  margin: 0 0 5px;
+  color: #303133;
+  font-size: 16px;
+}
+
+.fields-tip {
+  margin: 0;
+  color: #909399;
+  font-size: 13px;
+}
+
+.fields-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.field-item {
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  padding: 15px;
+  background-color: white;
+}
+
+.field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.field-index {
+  font-weight: 500;
+  color: #409eff;
+}
+
+.field-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.field-content {
+  padding: 0 10px;
+}
+
+.field-options {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f5f7fa;
+  border-radius: 4px;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-config {
+  margin-top: 15px;
+}
+
+/* 弹窗页脚样式 */
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* 空状态样式 */
+.empty-state {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.empty-actions {
+  margin-top: 20px;
+}
+
+/* 操作按钮组 */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* 记录详情样式 */
+.record-detail-content {
+  padding: 10px 0;
+}
+
+.record-header {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.record-info p {
+  margin: 8px 0;
+  color: #606266;
+}
+
+.record-info strong {
+  color: #303133;
+  margin-right: 8px;
+}
+
+.survey-answers {
+  margin: 20px 0;
+}
+
+.template-info {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #409eff;
+}
+
+.template-info p {
+  margin: 8px 0;
+  color: #606266;
+}
+
+.template-info strong {
+  color: #303133;
+  margin-right: 8px;
+}
+
+.suggestions-section {
+  margin-top: 20px;
+}
+
+.suggestion-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ebeef5;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.suggestion-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e4e7ed;
+}
+
+.suggestion-time {
+  color: #909399;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.suggestion-content {
+  line-height: 1.6;
+  color: #303133;
+  margin-bottom: 10px;
+}
+
+.trigger-changes {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f5f7fa;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.trigger-changes pre {
+  margin: 5px 0 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 11px;
+  color: #666;
+}
+
+.no-suggestions {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* 模板选择样式 */
+.template-select-dialog {
+  padding: 10px 0;
+}
+
+.template-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.template-name .el-icon {
+  color: #409eff;
+}
+
+.template-description {
+  color: #606266;
+  font-size: 13px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 加载状态 */
+.loading-template {
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* 创建提示 */
+.creation-tips {
+  margin-bottom: 20px;
+}
+
+.tips-list {
+  margin: 5px 0 0 0;
+  padding-left: 20px;
+  color: #606266;
+  font-size: 13px;
+}
+
+.tips-list li {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.tips-list li:last-child {
+  margin-bottom: 0;
+}
+
+.validation-tips {
+  margin-top: 5px;
+  color: #909399;
+  font-size: 12px;
+}
+
+.no-fields {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.no-fields-tip {
+  margin-top: 10px;
+  color: #909399;
+  font-size: 14px;
+}
+
+/* ==================== 法律建议弹窗专用样式 ==================== */
+/* AI生成中 */
+.ai-generating-content {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.loading-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.loading-icon {
+  animation: spin 1.5s linear infinite;
+  margin-bottom: var(--spacing-lg);
+  color: var(--accent-primary);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container h3 {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.loading-container p {
+  margin: 0 0 var(--spacing-lg);
+  color: var(--text-secondary);
+}
+
+.loading-tip {
+  margin-top: 15px !important;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* 建议内容区域 */
+.suggestion-content {
+  padding: var(--spacing-sm);
+}
+
+.suggestion-body {
+  line-height: 1.8;
+  color: var(--text-primary);
+  max-height: 400px;
+  overflow-y: auto;
+  padding: var(--spacing-sm);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.suggestion-footer {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.generated-time {
+  margin: 5px 0;
+}
+
+.suggestion-tip {
+  margin: 5px 0;
+  font-style: italic;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+}
+
+/* 触发变更字段 */
+.trigger-changes-section {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.trigger-changes-list {
+  margin-top: var(--spacing-sm);
+}
+
+.change-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.change-field {
+  font-weight: 500;
+  color: var(--text-primary);
+  min-width: 120px;
+}
+
+.change-values {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.previous-value {
+  color: var(--accent-danger);
+  font-size: 13px;
+}
+
+.current-value {
+  color: var(--accent-success);
+  font-size: 13px;
+}
+
+.no-suggestion {
+  text-align: center;
+  padding: 20px;
+}
+
+.no-suggestion-tip {
+  margin-top: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* 滚动条样式 */
+.suggestion-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestion-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.suggestion-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.suggestion-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ==================== 知识库弹窗专用样式 ==================== */
+
+/* 文档查看器 */
+.document-viewer {
+  min-height: 400px;
+}
+
+.document-meta {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+/* 内容区域 */
+.content-area {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: var(--spacing-lg);
+  background-color: var(--bg-tertiary);
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.content-area pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 加载内容 */
+.loading-content {
+  padding: var(--spacing-lg);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* 添加文件夹对话框 */
+.add-directory-dialog {
+  padding: 10px 0;
+}
+
+.form-tip {
+  margin-top: 5px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* 上传对话框 */
+.upload-dialog {
+  padding: 10px 0;
+}
+
+/* 弹窗页脚通用样式 */
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* 上传组件样式 */
+:deep(.upload-demo .el-upload) {
+  width: 100%;
+}
+
+:deep(.upload-demo .el-upload-dragger) {
+  width: 100%;
+  height: 180px;
+}
+
+:deep(.el-upload__tip) {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* 内容区域滚动条样式 */
+.content-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.content-area::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
