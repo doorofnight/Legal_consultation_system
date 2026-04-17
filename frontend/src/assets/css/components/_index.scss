@@ -1,0 +1,8 @@
+/* 组件样式层入口文件 */
+
+// 导入组件样式文件
+@forward 'buttons';
+@forward 'cards';
+@forward 'forms';
+@forward 'tables';
+@forward 'dialogs';

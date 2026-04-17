@@ -1,0 +1,460 @@
+/* 弹窗组件 - 基于设计规范 */
+
+/* ========== 弹窗遮罩 ========== */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-6);
+  animation: overlay-fade 0.2s ease-out;
+}
+
+@keyframes overlay-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========== 弹窗容器 ========== */
+.dialog {
+  background-color: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: dialog-slide 0.3s ease-out;
+  overflow: hidden;
+}
+
+@keyframes dialog-slide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 弹窗尺寸 */
+.dialog-sm {
+  max-width: 400px;
+}
+
+.dialog-md {
+  max-width: 500px;
+}
+
+.dialog-lg {
+  max-width: 600px;
+}
+
+.dialog-xl {
+  max-width: 800px;
+}
+
+.dialog-full {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+/* ========== 弹窗头部 ========== */
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-6) var(--space-6) 0 var(--space-6);
+  flex-shrink: 0;
+  
+  .header-content {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .dialog-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .dialog-subtitle {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    margin-top: var(--space-1);
+    line-height: 1.4;
+  }
+  
+  .dialog-close {
+    width: 32px;
+    height: 32px;
+    margin-left: var(--space-2);
+    border-radius: var(--radius-sm);
+    background-color: transparent;
+    border: none;
+    color: var(--gray-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+    
+    &:hover {
+      background-color: var(--gray-100);
+      color: var(--gray-700);
+    }
+    
+    &:active {
+      background-color: var(--gray-200);
+    }
+    
+    .close-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+/* ========== 弹窗内容 ========== */
+.dialog-content {
+  padding: var(--space-6);
+  flex: 1;
+  overflow-y: auto;
+  font-size: var(--text-sm);
+  color: var(--gray-700);
+  line-height: var(--leading-normal);
+  
+  p {
+    margin-bottom: var(--space-3);
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .content-scrollable {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+}
+
+/* ========== 弹窗底部 ========== */
+.dialog-footer {
+  padding: 0 var(--space-6) var(--space-6) var(--space-6);
+  flex-shrink: 0;
+  
+  .footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-3);
+    
+    &.center {
+      justify-content: center;
+    }
+    
+    &.space-between {
+      justify-content: space-between;
+    }
+    
+    &.left {
+      justify-content: flex-start;
+    }
+  }
+}
+
+/* ========== 弹窗变体 ========== */
+.dialog-borderless {
+  border: none;
+}
+
+.dialog-shadow-lg {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* ========== 确认弹窗 ========== */
+.dialog-confirm {
+  .dialog-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+    font-size: 24px;
+    
+    &.icon-info {
+      background-color: rgba(59, 130, 246, 0.1);
+      color: var(--info);
+    }
+    
+    &.icon-warning {
+      background-color: rgba(245, 158, 11, 0.1);
+      color: var(--warning);
+    }
+    
+    &.icon-danger {
+      background-color: rgba(239, 68, 68, 0.1);
+      color: var(--danger);
+    }
+    
+    &.icon-success {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: var(--success);
+    }
+  }
+  
+  .confirm-title {
+    text-align: center;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: var(--space-2);
+  }
+  
+  .confirm-message {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    margin-bottom: var(--space-6);
+  }
+}
+
+/* ========== 表单弹窗 ========== */
+.dialog-form {
+  .form-group {
+    margin-bottom: var(--space-4);
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* ========== 全屏弹窗 ========== */
+.dialog-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  margin: 0;
+  
+  .dialog-content {
+    flex: 1;
+    overflow-y: auto;
+  }
+}
+
+/* ========== 侧边弹窗 ========== */
+.dialog-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  max-width: 90vw;
+  max-height: 100vh;
+  border-radius: 0;
+  margin: 0;
+  animation: sidebar-slide 0.3s ease-out;
+  
+  &.sidebar-left {
+    left: 0;
+    right: auto;
+  }
+}
+
+@keyframes sidebar-slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ========== 弹窗组 ========== */
+.dialog-group {
+  .dialog + .dialog {
+    margin-top: var(--space-4);
+  }
+}
+
+/* ========== 弹窗状态 ========== */
+.dialog-loading {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--gray-200);
+    border-top-color: var(--primary-600);
+    border-radius: 50%;
+    animation: dialog-spinner 0.8s linear infinite;
+    z-index: 11;
+  }
+}
+
+@keyframes dialog-spinner {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ========== 响应式调整 ========== */
+@media (max-width: 768px) {
+  .dialog-overlay {
+    padding: var(--space-4);
+  }
+  
+  .dialog {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .dialog-header {
+    padding: var(--space-4) var(--space-4) 0 var(--space-4);
+  }
+  
+  .dialog-content {
+    padding: var(--space-4);
+  }
+  
+  .dialog-footer {
+    padding: 0 var(--space-4) var(--space-4) var(--space-4);
+    
+    .footer-actions {
+      flex-direction: column;
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+  
+  .dialog-sidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dialog-overlay {
+    padding: var(--space-2);
+  }
+  
+  .dialog-header {
+    padding: var(--space-3) var(--space-3) 0 var(--space-3);
+  }
+  
+  .dialog-content {
+    padding: var(--space-3);
+  }
+  
+  .dialog-footer {
+    padding: 0 var(--space-3) var(--space-3) var(--space-3);
+  }
+  
+  .dialog-confirm {
+    .confirm-message {
+      margin-bottom: var(--space-4);
+    }
+  }
+}
+
+/* ========== 弹窗过渡动画 ========== */
+.dialog-enter {
+  animation: dialog-enter 0.3s ease-out;
+}
+
+.dialog-exit {
+  animation: dialog-exit 0.2s ease-in;
+}
+
+@keyframes dialog-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes dialog-exit {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+}
+
+/* ========== 弹窗工具类 ========== */
+.dialog-no-padding {
+  .dialog-content {
+    padding: 0;
+  }
+}
+
+.dialog-no-header {
+  .dialog-header {
+    display: none;
+  }
+}
+
+.dialog-no-footer {
+  .dialog-footer {
+    display: none;
+  }
+}
+
+.dialog-scrollable {
+  .dialog-content {
+    overflow-y: auto;
+  }
+}
+
+.dialog-backdrop-blur {
+  .dialog-overlay {
+    backdrop-filter: blur(4px);
+  }
+}

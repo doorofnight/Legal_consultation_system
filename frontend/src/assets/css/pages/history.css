@@ -1,0 +1,145 @@
+/* History.vue专用样式 - 基于8pt Grid + shadcn/ui风格重构 */
+/* 迁移自: assets/css/history.css */
+
+/* ========== 主容器 ========== */
+.history-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ========== 头部卡片 ========== */
+.history-header-card {
+  margin-bottom: var(--space-6);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.history-subtitle {
+  margin-top: var(--space-2);
+}
+
+.history-subtitle p {
+  margin: 0;
+  color: var(--gray-600);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.history-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.documents-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.documents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.documents-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* ========== 会话标题单元格 ========== */
+.session-title-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ========== 调查历史和合同历史区域 ========== */
+.survey-history,
+.contract-history {
+  padding: var(--space-8) var(--space-6);
+}
+
+/* ========== 空状态样式 ========== */
+.empty-history {
+  text-align: center;
+  color: var(--gray-400);
+  padding: var(--space-8) 0;
+}
+
+.empty-history h4 {
+  margin: var(--space-4) 0 var(--space-2);
+  color: var(--gray-600);
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+.empty-history p {
+  margin-bottom: var(--space-6);
+  color: var(--gray-500);
+  font-size: var(--text-sm);
+}
+
+.header-refresh-btn:hover {
+  background-color: var(--gray-100);
+  transform: translateY(-1px);
+}
+
+.header-refresh-btn:active {
+  transform: translateY(0);
+}
+
+/* ========== 恢复三个卡片中图标的默认形状 ========== */
+.documents-card .documents-header .header-left .el-icon {
+  width: auto !important;
+  height: auto !important;
+  font-size: inherit !important;
+  border-radius: 0 !important;
+  background: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: inherit !important;
+  box-shadow: none !important;
+  vertical-align: middle !important;
+}
+
+/* ========== 确保图标大小适中 ========== */
+.documents-card .documents-header .header-left .el-icon svg {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+/* ========== 修复图标和标题对齐问题 ========== */
+.documents-card .documents-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.documents-card .documents-header .header-left h3 {
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+.documents-card .documents-header .header-left .el-icon {
+  margin-top: -1px; /* 微调图标位置使其与文字中线对齐 */
+}

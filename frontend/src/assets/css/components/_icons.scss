@@ -1,0 +1,222 @@
+/* 图标样式组件 - 基于分级系统 */
+
+/* ========== 基础图标样式 ========== */
+.icon-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+  
+  /* 确保SVG图标正确填充 */
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+}
+
+/* ========== 尺寸分类 ========== */
+.icon-xs {
+  @extend .icon-base;
+  width: var(--icon-size-xs);
+  height: var(--icon-size-xs);
+  font-size: var(--icon-size-xs);
+}
+
+.icon-sm {
+  @extend .icon-base;
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+  font-size: var(--icon-size-sm);
+}
+
+.icon-md {
+  @extend .icon-base;
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  font-size: var(--icon-size-md);
+}
+
+.icon-lg {
+  @extend .icon-base;
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+  font-size: var(--icon-size-lg);
+}
+
+.icon-xl {
+  @extend .icon-base;
+  width: var(--icon-size-xl);
+  height: var(--icon-size-xl);
+  font-size: var(--icon-size-xl);
+}
+
+/* ========== 颜色分类 ========== */
+.icon-primary {
+  color: var(--icon-color-primary);
+}
+
+.icon-secondary {
+  color: var(--icon-color-secondary);
+}
+
+.icon-tertiary {
+  color: var(--icon-color-tertiary);
+}
+
+.icon-muted {
+  color: var(--icon-color-muted);
+}
+
+.icon-light {
+  color: var(--icon-color-light);
+}
+
+.icon-dark {
+  color: var(--icon-color-dark);
+}
+
+/* ========== 功能分类 ========== */
+/* 系统logo图标 */
+.icon-logo {
+  @extend .icon-lg;
+  @extend .icon-primary;
+}
+
+/* 导航图标 */
+.icon-nav {
+  @extend .icon-sm;
+  @extend .icon-secondary;
+  
+  &.active {
+    color: var(--icon-nav-active-color);
+  }
+}
+
+/* 页面标题图标 */
+.icon-page-title {
+  @extend .icon-sm;
+  @extend .icon-secondary;
+}
+
+/* 按钮图标 */
+.icon-button {
+  @extend .icon-xs;
+  @extend .icon-tertiary;
+}
+
+/* 工具图标 */
+.icon-utility {
+  @extend .icon-xs;
+  @extend .icon-muted;
+}
+
+/* ========== 状态样式 ========== */
+.icon-hoverable {
+  &:hover {
+    color: var(--icon-color-dark);
+    cursor: pointer;
+  }
+}
+
+.icon-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  
+  &:hover {
+    color: inherit;
+  }
+}
+
+.icon-spin {
+  animation: icon-spin 1s linear infinite;
+}
+
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========== 组合样式 ========== */
+/* 带背景的图标 */
+.icon-with-bg {
+  border-radius: var(--radius-sm);
+  padding: var(--space-1);
+  background-color: var(--gray-100);
+  
+  &.icon-primary {
+    background-color: var(--primary-50);
+  }
+  
+  &.icon-secondary {
+    background-color: var(--primary-100);
+  }
+}
+
+/* 带文字的图标 */
+.icon-with-text {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  
+  .icon-text {
+    font-size: var(--text-sm);
+    line-height: 1;
+  }
+}
+
+/* ========== 特定应用场景 ========== */
+/* App.vue 导航栏图标 */
+.app-header-logo {
+  @extend .icon-logo;
+  margin-right: var(--space-3);
+}
+
+.app-nav-icon {
+  @extend .icon-nav;
+  margin-right: var(--space-2);
+}
+
+/* 页面标题图标 */
+.page-title-icon {
+  @extend .icon-page-title;
+  margin-right: var(--space-3);
+}
+
+/* 按钮内图标 */
+.button-icon {
+  @extend .icon-button;
+  margin-right: var(--space-2);
+}
+
+/* 工具操作图标 */
+.action-icon {
+  @extend .icon-utility;
+  @extend .icon-hoverable;
+}
+
+/* ========== 响应式调整 ========== */
+@media (max-width: 768px) {
+  .icon-lg {
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+    font-size: var(--icon-size-md);
+  }
+  
+  .icon-xl {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+    font-size: var(--icon-size-lg);
+  }
+  
+  .app-header-logo {
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+    font-size: var(--icon-size-md);
+  }
+}

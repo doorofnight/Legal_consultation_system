@@ -1,0 +1,94 @@
+// ============================================
+// 阴影工具类 - 基于设计规范（仅允许2层）
+// ============================================
+
+// 阴影变量定义
+:root {
+  // 基础阴影
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  // 内阴影
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  
+  // 无阴影
+  --shadow-none: 0 0 #0000;
+}
+
+// 阴影映射表
+$shadows: (
+  sm: var(--shadow-sm),
+  md: var(--shadow-md),
+  lg: var(--shadow-lg),
+  xl: var(--shadow-xl),
+  '2xl': var(--shadow-2xl),
+  inner: var(--shadow-inner),
+  none: var(--shadow-none)
+);
+
+// 断点配置（与其他工具类保持一致）
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px
+);
+
+// ============================================
+// 基础阴影工具类
+// ============================================
+
+// 基础阴影类 .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl, .shadow-2xl
+@each $key, $value in $shadows {
+  .shadow-#{$key} {
+    box-shadow: $value;
+  }
+}
+
+// ============================================
+// 状态阴影工具类
+// ============================================
+
+// 悬停阴影 .hover:shadow-*
+@each $key, $value in $shadows {
+  .hover\\:shadow-#{$key}:hover {
+    box-shadow: $value;
+  }
+}
+
+// 聚焦阴影 .focus:shadow-*
+@each $key, $value in $shadows {
+  .focus\\:shadow-#{$key}:focus {
+    box-shadow: $value;
+  }
+}
+
+// ============================================
+// 响应式阴影工具类
+// ============================================
+
+// 响应式前缀 .sm:shadow-*, .md:shadow-*, .lg:shadow-*, .xl:shadow-*
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    @each $key, $value in $shadows {
+      .#{$breakpoint}\\:shadow-#{$key} {
+        box-shadow: $value;
+      }
+    }
+  }
+}
+
+// ============================================
+// 特殊阴影工具类
+// ============================================
+
+// 阴影过渡效果
+.shadow-transition {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+// 注意：根据设计规范，仅允许2层阴影（默认态/hover态），禁止大投影
+// 实际使用时应根据设计规范选择合适的阴影级别

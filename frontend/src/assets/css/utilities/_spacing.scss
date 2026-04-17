@@ -1,0 +1,246 @@
+// ============================================
+// 间距工具类 - 基于8pt网格系统
+// ============================================
+
+// 基础间距变量
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+}
+
+// 间距映射表
+$spaces: (
+  1: var(--space-1),
+  2: var(--space-2),
+  3: var(--space-3),
+  4: var(--space-4),
+  6: var(--space-6),
+  8: var(--space-8),
+  10: var(--space-10),
+  12: var(--space-12)
+);
+
+// 断点配置
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px
+);
+
+// ============================================
+// 外边距工具类生成器
+// ============================================
+
+// 基础外边距 .m-1 ~ .m-12
+@each $key, $value in $spaces {
+  .m-#{$key} {
+    margin: $value;
+  }
+}
+
+// 方向上外边距 .mt-1 ~ .mt-12
+@each $key, $value in $spaces {
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+}
+
+// 方向下外边距 .mb-1 ~ .mb-12
+@each $key, $value in $spaces {
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+}
+
+// 方向左外边距 .ml-1 ~ .ml-12
+@each $key, $value in $spaces {
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+}
+
+// 方向右外边距 .mr-1 ~ .mr-12
+@each $key, $value in $spaces {
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+}
+
+// 水平方向外边距 .mx-1 ~ .mx-12
+@each $key, $value in $spaces {
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+}
+
+// 垂直方向外边距 .my-1 ~ .my-12
+@each $key, $value in $spaces {
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}
+
+// ============================================
+// 内边距工具类生成器
+// ============================================
+
+// 基础内边距 .p-1 ~ .p-12
+@each $key, $value in $spaces {
+  .p-#{$key} {
+    padding: $value;
+  }
+}
+
+// 方向上内边距 .pt-1 ~ .pt-12
+@each $key, $value in $spaces {
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+}
+
+// 方向下内边距 .pb-1 ~ .pb-12
+@each $key, $value in $spaces {
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+}
+
+// 方向左内边距 .pl-1 ~ .pl-12
+@each $key, $value in $spaces {
+  .pl-#{$key} {
+    padding-left: $value;
+  }
+}
+
+// 方向右内边距 .pr-1 ~ .pr-12
+@each $key, $value in $spaces {
+  .pr-#{$key} {
+    padding-right: $value;
+  }
+}
+
+// 水平方向内边距 .px-1 ~ .px-12
+@each $key, $value in $spaces {
+  .px-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+}
+
+// 垂直方向内边距 .py-1 ~ .py-12
+@each $key, $value in $spaces {
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+// ============================================
+// 间隙工具类生成器
+// ============================================
+
+// 基础间隙 .gap-1 ~ .gap-12
+@each $key, $value in $spaces {
+  .gap-#{$key} {
+    gap: $value;
+  }
+}
+
+// 行间隙 .gap-y-1 ~ .gap-y-12
+@each $key, $value in $spaces {
+  .gap-y-#{$key} {
+    row-gap: $value;
+  }
+}
+
+// 列间隙 .gap-x-1 ~ .gap-x-12
+@each $key, $value in $spaces {
+  .gap-x-#{$key} {
+    column-gap: $value;
+  }
+}
+
+// ============================================
+// 响应式间距工具类生成器
+// ============================================
+
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: #{$width}) {
+    
+    // 响应式外边距
+    @each $key, $value in $spaces {
+      .#{$breakpoint}\:m-#{$key} {
+        margin: $value;
+      }
+      .#{$breakpoint}\:mt-#{$key} {
+        margin-top: $value;
+      }
+      .#{$breakpoint}\:mb-#{$key} {
+        margin-bottom: $value;
+      }
+      .#{$breakpoint}\:ml-#{$key} {
+        margin-left: $value;
+      }
+      .#{$breakpoint}\:mr-#{$key} {
+        margin-right: $value;
+      }
+      .#{$breakpoint}\:mx-#{$key} {
+        margin-left: $value;
+        margin-right: $value;
+      }
+      .#{$breakpoint}\:my-#{$key} {
+        margin-top: $value;
+        margin-bottom: $value;
+      }
+    }
+
+    // 响应式内边距
+    @each $key, $value in $spaces {
+      .#{$breakpoint}\:p-#{$key} {
+        padding: $value;
+      }
+      .#{$breakpoint}\:pt-#{$key} {
+        padding-top: $value;
+      }
+      .#{$breakpoint}\:pb-#{$key} {
+        padding-bottom: $value;
+      }
+      .#{$breakpoint}\:pl-#{$key} {
+        padding-left: $value;
+      }
+      .#{$breakpoint}\:pr-#{$key} {
+        padding-right: $value;
+      }
+      .#{$breakpoint}\:px-#{$key} {
+        padding-left: $value;
+        padding-right: $value;
+      }
+      .#{$breakpoint}\:py-#{$key} {
+        padding-top: $value;
+        padding-bottom: $value;
+      }
+    }
+
+    // 响应式间隙
+    @each $key, $value in $spaces {
+      .#{$breakpoint}\:gap-#{$key} {
+        gap: $value;
+      }
+      .#{$breakpoint}\:gap-x-#{$key} {
+        column-gap: $value;
+      }
+      .#{$breakpoint}\:gap-y-#{$key} {
+        row-gap: $value;
+      }
+    }
+  }
+}

@@ -1,0 +1,283 @@
+/* ========================================
+   显示工具类 - Display Utilities
+   ======================================== */
+
+/* --------------------
+   显示类型 (Display Type)
+   -------------------- */
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.inline-grid {
+  display: inline-grid;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --------------------
+   可见性 (Visibility)
+   -------------------- */
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* --------------------
+   溢出控制 (Overflow)
+   -------------------- */
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+/* 方向性溢出 */
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.overflow-x-visible {
+  overflow-x: visible;
+}
+
+.overflow-y-visible {
+  overflow-y: visible;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+/* --------------------
+   响应式显示 (Responsive Display)
+   断点: sm:640px, md:768px, lg:1024px, xl:1280px
+   -------------------- */
+
+/* Small (sm) - 640px及以上 */
+@media (min-width: 640px) {
+  .sm\\:block {
+    display: block;
+  }
+  
+  .sm\\:inline-block {
+    display: inline-block;
+  }
+  
+  .sm\\:inline {
+    display: inline;
+  }
+  
+  .sm\\:flex {
+    display: flex;
+  }
+  
+  .sm\\:inline-flex {
+    display: inline-flex;
+  }
+  
+  .sm\\:grid {
+    display: grid;
+  }
+  
+  .sm\\:inline-grid {
+    display: inline-grid;
+  }
+  
+  .sm\\:hidden {
+    display: none;
+  }
+}
+
+/* Medium (md) - 768px及以上 */
+@media (min-width: 768px) {
+  .md\\:block {
+    display: block;
+  }
+  
+  .md\\:inline-block {
+    display: inline-block;
+  }
+  
+  .md\\:inline {
+    display: inline;
+  }
+  
+  .md\\:flex {
+    display: flex;
+  }
+  
+  .md\\:inline-flex {
+    display: inline-flex;
+  }
+  
+  .md\\:grid {
+    display: grid;
+  }
+  
+  .md\\:inline-grid {
+    display: inline-grid;
+  }
+  
+  .md\\:hidden {
+    display: none;
+  }
+}
+
+/* Large (lg) - 1024px及以上 */
+@media (min-width: 1024px) {
+  .lg\\:block {
+    display: block;
+  }
+  
+  .lg\\:inline-block {
+    display: inline-block;
+  }
+  
+  .lg\\:inline {
+    display: inline;
+  }
+  
+  .lg\\:flex {
+    display: flex;
+  }
+  
+  .lg\\:inline-flex {
+    display: inline-flex;
+  }
+  
+  .lg\\:grid {
+    display: grid;
+  }
+  
+  .lg\\:inline-grid {
+    display: inline-grid;
+  }
+  
+  .lg\\:hidden {
+    display: none;
+  }
+}
+
+/* Extra Large (xl) - 1280px及以上 */
+@media (min-width: 1280px) {
+  .xl\\:block {
+    display: block;
+  }
+  
+  .xl\\:inline-block {
+    display: inline-block;
+  }
+  
+  .xl\\:inline {
+    display: inline;
+  }
+  
+  .xl\\:flex {
+    display: flex;
+  }
+  
+  .xl\\:inline-flex {
+    display: inline-flex;
+  }
+  
+  .xl\\:grid {
+    display: grid;
+  }
+  
+  .xl\\:inline-grid {
+    display: inline-grid;
+  }
+  
+  .xl\\:hidden {
+    display: none;
+  }
+}
+
+/* --------------------
+   打印显示 (Print Display)
+   -------------------- */
+@media print {
+  .print\\:hidden {
+    display: none !important;
+  }
+  
+  .print\\:block {
+    display: block !important;
+  }
+  
+  .print\\:inline-block {
+    display: inline-block !important;
+  }
+  
+  .print\\:inline {
+    display: inline !important;
+  }
+  
+  .print\\:flex {
+    display: flex !important;
+  }
+  
+  .print\\:inline-flex {
+    display: inline-flex !important;
+  }
+  
+  .print\\:grid {
+    display: grid !important;
+  }
+  
+  .print\\:inline-grid {
+    display: inline-grid !important;
+  }
+}

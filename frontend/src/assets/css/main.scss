@@ -1,0 +1,132 @@
+/* 主样式入口文件 - 基于8pt Grid + shadcn/ui风格的设计系统 */
+
+/* ========== 基础样式 ========== */
+@use 'base/_variables' as *;
+@use 'base/_reset' as *;
+@use 'base/_typography' as *;
+@use 'base/_layout' as *;
+
+/* ========== 工具类 ========== */
+@use 'utilities/_colors' as *;
+@use 'utilities/_spacing' as *;
+@use 'utilities/_typography' as *;
+@use 'utilities/_display' as *;
+@use 'utilities/_flexbox' as *;
+@use 'utilities/_grid' as *;
+@use 'utilities/_borders' as *;
+@use 'utilities/_shadows' as *;
+@use 'utilities/_responsive' as *;
+@use 'utilities/_tailwind-like' as *;
+
+/* ========== 组件样式 ========== */
+@use 'components/_buttons' as *;
+@use 'components/_cards' as *;
+@use 'components/_forms' as *;
+@use 'components/_tables' as *;
+@use 'components/_dialogs' as *;
+@use 'components/_icons' as *;
+
+/* ========== 页面样式 ========== */
+@use 'pages/home' as *;
+@use 'pages/contract' as *;
+@use 'pages/knowledge' as *;
+@use 'pages/survey' as *;
+@use 'pages/history' as *;
+@use 'pages/dialog' as *;
+
+/* ========== 主题样式 ========== */
+@use 'themes/_light' as *;
+@use 'themes/_dark' as *;
+@use 'themes/_index' as *;
+
+/* ========== 全局样式 ========== */
+:root {
+  font-family: var(--font-sans);
+  line-height: var(--leading-normal);
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--gray-50);
+  color: var(--gray-900);
+}
+
+/* 容器类 */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* 工具类扩展 */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 滚动条样式 */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* 过渡动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity var(--transition-normal);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
+}

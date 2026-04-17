@@ -1,0 +1,149 @@
+/* 主题系统入口文件
+ * 提供主题切换功能和主题变量导入
+ */
+
+// 导入主题变量
+@forward './_light.scss' as light-*;
+@forward './_dark.scss' as dark-*;
+
+/* 主题切换混合器 */
+@mixin theme-light() {
+  // 应用浅色主题变量
+  :root[data-theme="light"],
+  .theme-light {
+    @content;
+  }
+}
+
+@mixin theme-dark() {
+  // 应用深色主题变量
+  :root[data-theme="dark"],
+  .theme-dark {
+    @content;
+  }
+}
+
+@mixin theme-auto() {
+  // 自动主题 - 基于系统偏好
+  @content;
+  
+  // 系统偏好深色模式
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      @content;
+    }
+  }
+}
+
+/* 主题工具类 */
+.theme-light {
+  // 强制使用浅色主题
+  color-scheme: light;
+}
+
+.theme-dark {
+  // 强制使用深色主题
+  color-scheme: dark;
+}
+
+/* 主题切换过渡效果 */
+.theme-transition {
+  &,
+  *,
+  *::before,
+  *::after {
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* 主题变量导出 */
+:export {
+  lightTheme: 'light';
+  darkTheme: 'dark';
+}
+
+/* 默认主题设置 */
+:root {
+  // 默认使用浅色主题
+  @include theme-light() {
+    // 这里可以放置需要在浅色主题下应用的样式
+  }
+  
+  // 系统偏好深色模式支持
+  @media (prefers-color-scheme: dark) {
+    &:not([data-theme="light"]) {
+      @include theme-dark() {
+        // 这里可以放置在深色主题下应用的样式
+      }
+    }
+  }
+}
+
+/* 主题切换按钮样式示例 */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  border: 1px solid var(--border-primary);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  
+  &:hover {
+    background-color: var(--button-secondary-hover);
+    border-color: var(--hover-border);
+  }
+  
+  &:active {
+    background-color: var(--button-secondary-active);
+  }
+  
+  .theme-light & {
+    // 浅色主题下的特殊样式
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .theme-dark & {
+    // 深色主题下的特殊样式
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* 主题相关工具类 */
+.text-theme-primary {
+  color: var(--text-heading-primary);
+}
+
+.text-theme-secondary {
+  color: var(--text-body-primary);
+}
+
+.text-theme-muted {
+  color: var(--text-caption);
+}
+
+.bg-theme-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-theme-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-theme-surface {
+  background-color: var(--surface-primary);
+}
+
+.border-theme {
+  border-color: var(--border-primary);
+}
+
+.shadow-theme {
+  box-shadow: var(--shadow-md);
+}

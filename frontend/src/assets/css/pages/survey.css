@@ -1,0 +1,359 @@
+/* Survey.vue专用样式 - 基于8pt Grid + shadcn/ui风格重构 */
+/* 迁移自: assets/css/survey.css */
+
+/* ========== 主容器 ========== */
+.survey-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  overflow-x: hidden;
+}
+
+/* ========== 通用卡片样式 ========== */
+.survey-card {
+  border-radius: var(--radius-lg);
+  background: transparent;
+  border: none;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.survey-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+/* ========== 头部卡片 ========== */
+.survey-header-card {
+  margin-bottom: var(--space-6);
+}
+
+.survey-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+
+.survey-header .header-right {
+  margin-right: 80; 
+  margin-left: auto; 
+}
+
+.survey-subtitle {
+  color: var(--gray-600);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.survey-subtitle p {
+  margin: var(--space-1) 0;
+}
+
+.survey-tip {
+  color: var(--success);
+  font-weight: 500;
+  margin-top: var(--space-2) !important;
+}
+
+/* ========== 内容区域 ========== */
+.survey-content {
+  display: flex;
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .survey-content {
+    flex-direction: column;
+  }
+}
+
+/* ========== 表单卡片 ========== */
+.survey-form-card {
+  flex: 1;
+}
+
+.form-header {
+  padding: var(--space-4) 0;
+}
+
+.form-header h3 {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-lg);
+  color: var(--gray-900);
+  font-weight: 600;
+}
+
+.form-description {
+  margin: 0;
+  color: var(--gray-600);
+  font-size: var(--text-sm);
+}
+
+/* ========== 动态表单容器 ========== */
+.dynamic-form-container {
+  padding: var(--space-4) 0;
+}
+
+.survey-form {
+  max-width: 800px;
+}
+
+/* ========== 表单字段样式 ========== */
+:deep(.el-form-item) {
+  margin-bottom: var(--space-6);
+}
+
+:deep(.el-form-item__label) {
+  font-weight: 500;
+  color: var(--gray-900);
+  padding-right: var(--space-4);
+}
+
+:deep(.el-input),
+:deep(.el-textarea),
+:deep(.el-select),
+:deep(.el-input-number) {
+  width: 100%;
+}
+
+:deep(.el-input__wrapper),
+:deep(.el-textarea__inner) {
+  border-radius: var(--radius-md);
+  border: none;
+  background: white;
+  transition: all var(--transition-fast);
+}
+
+:deep(.el-input__wrapper:hover),
+:deep(.el-textarea__inner:hover) {
+  border-color: transparent;
+}
+
+:deep(.el-input__wrapper.is-focus),
+:deep(.el-textarea__inner:focus) {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+:deep(.el-input-number) .el-input__wrapper {
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+}
+
+/* ========== 单选/多选按钮组 ========== */
+:deep(.el-radio-group),
+:deep(.el-checkbox-group) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+:deep(.el-radio),
+:deep(.el-checkbox) {
+  margin-right: 0;
+}
+
+.progress-header,
+.template-info-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.progress-header h3,
+.template-info-header h3 {
+  margin: 0;
+  font-size: var(--text-base);
+  color: var(--gray-900);
+}
+
+.progress-content {
+  padding: var(--space-2) 0;
+}
+
+.progress-tip {
+  margin-top: var(--space-2);
+  color: var(--gray-500);
+  font-size: var(--text-xs);
+}
+
+/* ========== 信息卡片图标 ========== */
+.template-info-header .el-icon,
+.progress-header .el-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: var(--space-2);
+}
+
+/* ========== 进度条 ========== */
+:deep(.el-progress-bar__outer) {
+  background: var(--gray-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+:deep(.el-progress-bar__inner) {
+  background: linear-gradient(90deg, var(--primary-600) 0%, var(--success) 100%);
+  border-radius: var(--radius-full);
+  transition: width 0.6s ease;
+}
+
+/* ========== 变更详情样式 ========== */
+.changed-fields-details {
+  margin-top: var(--space-4);
+  border-top: none;
+  padding-top: var(--space-4);
+}
+
+.changed-fields-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.changed-field-item {
+  padding: var(--space-4);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  border: none;
+}
+
+.field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.field-label {
+  font-weight: 600;
+  color: var(--gray-900);
+  font-size: var(--text-sm);
+}
+
+.field-values {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+}
+
+.value-label {
+  color: var(--gray-600);
+  min-width: 50px;
+  font-weight: 500;
+}
+
+.value-content {
+  color: var(--gray-900);
+  flex: 1;
+  word-break: break-word;
+}
+
+.value-content.new-value {
+  color: var(--success);
+  font-weight: 500;
+}
+
+.no-changes {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.no-changes-text {
+  color: var(--gray-500);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+/* ========== 折叠面板样式 ========== */
+:deep(.el-collapse) {
+  border: none;
+}
+
+:deep(.el-collapse-item__header) {
+  background: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  font-weight: 500;
+  color: var(--gray-900);
+}
+
+:deep(.el-collapse-item__wrap) {
+  background: transparent;
+  border: none;
+}
+
+:deep(.el-collapse-item__content) {
+  padding: var(--space-4) 0;
+}
+
+/* ========== 提交按钮 ========== */
+:deep(.el-button--primary) {
+  background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+  border: none;
+  color: white;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+:deep(.el-button--primary:hover) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* ========== 响应式调整 ========== */
+@media (max-width: 768px) {
+  .survey-container {
+    padding: var(--space-4);
+  }
+  
+  .survey-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+  
+  .header-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .survey-card {
+    backdrop-filter: none;
+    background: white;
+  }
+}

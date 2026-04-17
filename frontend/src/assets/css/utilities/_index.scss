@@ -1,0 +1,67 @@
+/* ============================================
+   工具类层入口文件
+   ============================================ */
+
+// 导入基础工具类
+@forward 'spacing';      // 间距工具（8pt网格系统）
+@forward 'display';      // 显示工具
+@forward 'flexbox';      // Flexbox工具
+@forward 'grid';         // Grid工具
+
+// 导入样式工具类
+@forward 'typography';   // 排版工具
+@forward 'colors';       // 颜色工具
+@forward 'borders';      // 边框工具（radius:10px）
+@forward 'shadows';      // 阴影工具（仅2层）
+
+// 导入响应式工具类
+@forward 'responsive';   // 响应式工具
+
+/* ============================================
+   工具类使用说明
+   ============================================
+
+   1. 间距工具类（基于8pt网格）：
+      - 外边距：.m-1, .m-2, .m-3, .m-4, .m-6, .m-8, .m-10, .m-12
+      - 内边距：.p-1, .p-2, .p-3, .p-4, .p-6, .p-8, .p-10, .p-12
+      - 方向性：.mt-4, .mb-6, .ml-2, .mr-3, .mx-4, .my-6
+      - 间隙：.gap-4, .gap-x-2, .gap-y-6
+
+   2. 显示工具类：
+      - 显示类型：.block, .inline-block, .inline, .flex, .inline-flex, .grid, .inline-grid, .hidden
+      - 响应式：.sm:block, .md:hidden, .lg:flex, .xl:grid
+
+   3. Flexbox工具类：
+      - 方向：.flex-row, .flex-row-reverse, .flex-col, .flex-col-reverse
+      - 对齐：.items-center, .justify-between, .self-start
+      - 伸缩：.flex-1, .flex-auto, .flex-none
+
+   4. Grid工具类：
+      - 网格列：.grid-cols-1, .grid-cols-2, .grid-cols-3, .grid-cols-4
+      - 列跨度：.col-span-1, .col-span-2, .col-span-3, .col-span-full
+
+   5. 排版工具类：
+      - 字体大小：.text-xs, .text-sm, .text-base, .text-lg, .text-xl, .text-2xl
+      - 字体粗细：.font-normal, .font-medium, .font-semibold, .font-bold
+      - 文本对齐：.text-left, .text-center, .text-right, .text-justify
+
+   6. 颜色工具类：
+      - 文本颜色：.text-primary, .text-secondary, .text-muted, .text-light
+      - 背景颜色：.bg-primary, .bg-secondary, .bg-muted, .bg-light
+      - 边框颜色：.border-primary, .border-secondary, .border-muted
+
+   7. 边框工具类：
+      - 圆角：.rounded, .rounded-sm, .rounded-md, .rounded-lg, .rounded-xl, .rounded-full
+      - 边框宽度：.border, .border-2, .border-4
+      - 边框样式：.border-solid, .border-dashed, .border-dotted
+
+   8. 阴影工具类：
+      - 阴影级别：.shadow-sm, .shadow-md, .shadow-lg, .shadow-xl
+      - 无阴影：.shadow-none
+      - 内阴影：.shadow-inner
+
+   9. 响应式工具类：
+      - 断点：sm:640px, md:768px, lg:1024px, xl:1280px
+      - 前缀：.sm:text-lg, .md:flex, .lg:grid-cols-3, .xl:hidden
+
+   ============================================ */

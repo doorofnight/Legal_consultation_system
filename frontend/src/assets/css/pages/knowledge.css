@@ -1,0 +1,283 @@
+/* Knowledge.vue专用样式 - 基于8pt Grid + shadcn/ui风格重构 */
+/* 迁移自: assets/css/knowledge.css */
+
+/* ========== 主容器 ========== */
+.knowledge-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 120px);
+  height: auto;
+  gap: var(--space-6);
+}
+
+/* ========== 头部卡片 ========== */
+.knowledge-header-card {
+  width: 100%;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+/* ========== 目录卡片 ========== */
+.directory-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* 允许内部滚动 */
+}
+
+/* ========== 目录折叠区域 ========== */
+.directory-collapse {
+  flex: 1;
+  overflow-y: hidden; /* 删除滑动条 */
+  max-height: none;
+}
+
+/* ========== 文件列表容器 ========== */
+.file-list {
+  max-height: 400px;
+  overflow-y: hidden; /* 删除滑动条 */
+}
+
+/* ========== 折叠面板标题样式 ========== */
+.collapse-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: var(--space-2);
+}
+
+.title-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex: 1;
+  min-width: 0; /* 允许内容收缩 */
+  overflow: hidden;
+}
+
+.title-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  min-width: 240px; /* 为两个按钮预留固定宽度 */
+  justify-content: flex-end;
+  flex-shrink: 0; /* 防止按钮区域被压缩 */
+}
+
+.title-right .el-button {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.directory-name {
+  font-weight: 600;
+  color: var(--gray-900);
+  font-size: var(--text-lg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
+/* ========== 目录头部样式 ========== */
+.directory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* ========== 通用头部样式 ========== */
+.knowledge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.header-left h2 {
+  margin: 0;
+  font-size: var(--text-xl);
+  color: var(--gray-900);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.knowledge-header .header-right {
+  margin-right: 80; 
+  margin-left: auto; 
+}
+
+.knowledge-subtitle {
+  margin-top: var(--space-1);
+}
+
+.knowledge-subtitle p {
+  margin: 0;
+  color: var(--gray-600);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+/* ========== 空状态 ========== */
+.empty-state {
+  padding: var(--space-8) 0;
+  text-align: center;
+  color: var(--gray-400);
+}
+
+/* ========== 文档查看器 ========== */
+.document-viewer {
+  min-height: 400px;
+}
+
+.document-meta {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+/* ========== 内容区域 ========== */
+.content-area {
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: var(--space-6);
+  background-color: var(--gray-50);
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.content-area pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+/* ========== 加载内容 ========== */
+.loading-content {
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--gray-500);
+}
+
+/* ========== 知识库目录图标样式 ========== */
+.directory-header .header-left .el-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary-700) 0%, var(--primary-800) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: var(--space-2);
+}
+
+/* ========== 目录下的每个目录名和图标样式 ========== */
+.collapse-title .title-left .el-icon {
+  width: auto;
+  height: auto;
+  font-size: inherit;
+  border-radius: 0;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  box-shadow: none;
+}
+
+/* ========== 确保图标大小适中 ========== */
+.collapse-title .title-left .el-icon svg {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+/* ========== 操作列按钮间距 ========== */
+:deep(.el-table .cell) .el-button + .el-button {
+  margin-left: var(--space-2);
+}
+
+/* ========== 修复目录折叠面板按钮抖动问题 ========== */
+
+/* 隐藏Element Plus默认的下拉箭头 */
+:deep(.el-collapse-item__header) .el-collapse-item__arrow {
+  display: none;
+}
+
+/* 确保整个标题区域不会因为内容变化而重新布局 */
+:deep(.el-collapse-item__header) {
+  position: relative;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+  will-change: unset; /* 防止头部重新布局 */
+}
+
+/* 为折叠面板标题添加固定布局 */
+:deep(.el-collapse-item__header > div) {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+/* 确保折叠面板动画平滑，不会影响布局 */
+:deep(.el-collapse-item__wrap) {
+  will-change: height;
+}
+
+/* ========== 响应式调整 ========== */
+@media (max-width: 768px) {
+  .knowledge-container {
+    height: auto;
+    min-height: calc(100vh - 120px);
+  }
+  
+  .knowledge-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+  
+  .header-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .document-meta {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .content-area {
+    max-height: 300px;
+  }
+  
+  /* 移动端目录卡片调整 */
+  .directory-card {
+    min-height: 300px;
+  }
+  
+  .file-list {
+    max-height: 300px;
+    overflow-y: hidden; /* 删除滑动条 */
+  }
+}

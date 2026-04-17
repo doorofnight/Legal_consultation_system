@@ -1,0 +1,242 @@
+/* ========================================
+   边框工具类 - 基于设计规范 (radius: 10px)
+   ======================================== */
+
+/* --------------------
+   边框宽度 (Border Width)
+   -------------------- */
+.border {
+  border-width: 1px;
+}
+
+.border-0 {
+  border-width: 0px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-4 {
+  border-width: 4px;
+}
+
+.border-8 {
+  border-width: 8px;
+}
+
+/* --------------------
+   边框样式 (Border Style)
+   -------------------- */
+.border-solid {
+  border-style: solid;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
+.border-dotted {
+  border-style: dotted;
+}
+
+.border-double {
+  border-style: double;
+}
+
+.border-none {
+  border-style: none;
+}
+
+/* --------------------
+   圆角 (Border Radius) - 基于 10px 规范
+   -------------------- */
+/* 基础圆角 - 10px */
+.rounded {
+  border-radius: 10px;
+}
+
+/* 小圆角 - 6px */
+.rounded-sm {
+  border-radius: 6px;
+}
+
+/* 中圆角 - 8px */
+.rounded-md {
+  border-radius: 8px;
+}
+
+/* 大圆角 - 12px */
+.rounded-lg {
+  border-radius: 12px;
+}
+
+/* 超大圆角 - 16px */
+.rounded-xl {
+  border-radius: 16px;
+}
+
+/* 完全圆形 */
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* --------------------
+   方向性圆角 (Directional Border Radius)
+   -------------------- */
+/* 顶部圆角 */
+.rounded-t {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* 右侧圆角 */
+.rounded-r {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* 底部圆角 */
+.rounded-b {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* 左侧圆角 */
+.rounded-l {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* 左上圆角 */
+.rounded-tl {
+  border-top-left-radius: 10px;
+}
+
+/* 右上圆角 */
+.rounded-tr {
+  border-top-right-radius: 10px;
+}
+
+/* 右下圆角 */
+.rounded-br {
+  border-bottom-right-radius: 10px;
+}
+
+/* 左下圆角 */
+.rounded-bl {
+  border-bottom-left-radius: 10px;
+}
+
+/* --------------------
+   边框颜色 (Border Color)
+   -------------------- */
+.border-transparent {
+  border-color: transparent;
+}
+
+.border-current {
+  border-color: currentColor;
+}
+
+/* --------------------
+   分割线 (Divide)
+   -------------------- */
+/* 水平分割线 */
+.divide-x > * + * {
+  border-right-width: 0px;
+  border-left-width: 1px;
+}
+
+.divide-x-reverse > * + * {
+  border-right-width: 1px;
+  border-left-width: 0px;
+}
+
+/* 垂直分割线 */
+.divide-y > * + * {
+  border-top-width: 1px;
+  border-bottom-width: 0px;
+}
+
+.divide-y-reverse > * + * {
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+}
+
+/* --------------------
+   分割线宽度 (Divide Width)
+   -------------------- */
+/* 水平分割线宽度 */
+.divide-x-0 > * + * {
+  border-left-width: 0px;
+}
+
+.divide-x-2 > * + * {
+  border-left-width: 2px;
+}
+
+.divide-x-4 > * + * {
+  border-left-width: 4px;
+}
+
+.divide-x-8 > * + * {
+  border-left-width: 8px;
+}
+
+/* 垂直分割线宽度 */
+.divide-y-0 > * + * {
+  border-top-width: 0px;
+}
+
+.divide-y-2 > * + * {
+  border-top-width: 2px;
+}
+
+.divide-y-4 > * + * {
+  border-top-width: 4px;
+}
+
+.divide-y-8 > * + * {
+  border-top-width: 8px;
+}
+
+/* --------------------
+   分割线颜色 (Divide Color)
+   -------------------- */
+.divide-gray-100 > * + * {
+  border-color: #f3f4f6;
+}
+
+.divide-gray-200 > * + * {
+  border-color: #e5e7eb;
+}
+
+.divide-gray-300 > * + * {
+  border-color: #d1d5db;
+}
+
+.divide-gray-400 > * + * {
+  border-color: #9ca3af;
+}
+
+.divide-gray-500 > * + * {
+  border-color: #6b7280;
+}
+
+.divide-gray-600 > * + * {
+  border-color: #4b5563;
+}
+
+.divide-gray-700 > * + * {
+  border-color: #374151;
+}
+
+.divide-gray-800 > * + * {
+  border-color: #1f2937;
+}
+
+.divide-gray-900 > * + * {
+  border-color: #111827;
+}
+

@@ -1,0 +1,257 @@
+/* 深色主题变量定义
+ * 基于设计规范：仅1个品牌主色 + 灰阶系统，禁止彩虹色
+ * 灰阶对比规则：标题高对比，正文/说明中低对比
+ */
+
+:root[data-theme="dark"],
+.theme-dark {
+  /* ========== 品牌主色 - 蓝色系 (保持与浅色主题一致) ========== */
+  --primary-50: #1e3a8a;
+  --primary-100: #1e40af;
+  --primary-200: #1d4ed8;
+  --primary-300: #2563eb;
+  --primary-400: #3b82f6;
+  --primary-500: #60a5fa;
+  --primary-600: #93c5fd;
+  --primary-700: #bfdbfe;
+  --primary-800: #dbeafe;
+  --primary-900: #eff6ff;
+
+  /* 主色别名 - 用于组件 (调整亮度) */
+  --primary: var(--primary-400);
+  --primary-hover: var(--primary-500);
+  --primary-active: var(--primary-600);
+  --primary-light: var(--primary-900);
+  --primary-dark: var(--primary-300);
+
+  /* ========== 灰阶系统 (反转) ========== */
+  /* 标题高对比度 (50-100) - 在深色背景上浅色文字 */
+  --gray-50: #f9fafb;  /* 最高对比度 - 主要标题 */
+  --gray-100: #f3f4f6; /* 高对比度 - 次要标题 */
+  --gray-200: #e5e7eb; /* 中等高对比度 - 三级标题 */
+  
+  /* 正文中对比度 (300-500) */
+  --gray-300: #d1d5db; /* 正文主要文字 */
+  --gray-400: #9ca3af; /* 正文次要文字 */
+  --gray-500: #6b7280; /* 正文辅助文字 */
+  
+  /* 说明低对比度 (600-900) */
+  --gray-600: #4b5563; /* 边框、分隔线 */
+  --gray-700: #374151; /* 背景、卡片边框 */
+  --gray-800: #1f2937; /* 背景、卡片填充 */
+  --gray-900: #111827; /* 页面背景 */
+
+  /* ========== 语义颜色 ========== */
+  /* 基于灰阶的功能色，避免彩虹色 (调整亮度) */
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --info: var(--primary-400);
+
+  /* ========== 背景与表面 ========== */
+  --bg-primary: var(--gray-900);
+  --bg-secondary: var(--gray-800);
+  --bg-tertiary: var(--gray-700);
+  
+  --surface-primary: var(--gray-800);
+  --surface-secondary: var(--gray-700);
+  --surface-tertiary: var(--gray-600);
+
+  /* ========== 文字颜色 ========== */
+  /* 标题 - 高对比度 */
+  --text-heading-primary: var(--gray-50);
+  --text-heading-secondary: var(--gray-100);
+  --text-heading-tertiary: var(--gray-200);
+  
+  /* 正文 - 中对比度 */
+  --text-body-primary: var(--gray-300);
+  --text-body-secondary: var(--gray-400);
+  --text-body-tertiary: var(--gray-500);
+  
+  /* 说明/标签 - 低对比度 */
+  --text-caption: var(--gray-500);
+  --text-placeholder: var(--gray-600);
+  --text-disabled: var(--gray-600);
+
+  /* 链接 */
+  --text-link: var(--primary-400);
+  --text-link-hover: var(--primary-500);
+  --text-link-visited: var(--primary-300);
+
+  /* ========== 边框与分隔线 ========== */
+  --border-primary: var(--gray-700);
+  --border-secondary: var(--gray-600);
+  --border-tertiary: var(--gray-500);
+  
+  --divider-primary: var(--gray-700);
+  --divider-secondary: var(--gray-600);
+
+  /* ========== 交互状态 ========== */
+  --hover-bg: rgba(255, 255, 255, 0.08);
+  --active-bg: rgba(255, 255, 255, 0.12);
+  --selected-bg: rgba(59, 130, 246, 0.2);
+  
+  --hover-border: var(--gray-500);
+  --active-border: var(--gray-400);
+
+  /* ========== 阴影 ========== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  
+  --shadow-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+
+  /* ========== 组件特定变量 ========== */
+  /* 按钮 */
+  --button-primary-bg: var(--primary-500);
+  --button-primary-text: var(--gray-900);
+  --button-primary-hover: var(--primary-600);
+  --button-primary-active: var(--primary-700);
+  
+  --button-secondary-bg: var(--gray-700);
+  --button-secondary-text: var(--gray-200);
+  --button-secondary-hover: var(--gray-600);
+  --button-secondary-active: var(--gray-500);
+  
+  --button-ghost-text: var(--gray-300);
+  --button-ghost-hover: var(--gray-800);
+  --button-ghost-active: var(--gray-700);
+
+  /* 输入框 */
+  --input-bg: var(--gray-800);
+  --input-border: var(--gray-700);
+  --input-text: var(--gray-200);
+  --input-placeholder: var(--gray-500);
+  --input-focus-border: var(--primary-500);
+  --input-focus-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  
+  --input-disabled-bg: var(--gray-900);
+  --input-disabled-text: var(--gray-600);
+  --input-disabled-border: var(--gray-800);
+
+  /* 卡片 */
+  --card-bg: var(--gray-800);
+  --card-border: var(--gray-700);
+  --card-shadow: var(--shadow-sm);
+  --card-hover-shadow: var(--shadow-md);
+
+  /* 表格 */
+  --table-header-bg: var(--gray-900);
+  --table-header-text: var(--gray-300);
+  --table-row-bg: var(--gray-800);
+  --table-row-hover: var(--gray-700);
+  --table-border: var(--gray-700);
+  --table-stripe-bg: var(--gray-900);
+
+  /* 对话框/模态框 */
+  --modal-backdrop: rgba(0, 0, 0, 0.7);
+  --modal-bg: var(--gray-800);
+  --modal-border: var(--gray-700);
+  --modal-shadow: var(--shadow-xl);
+
+  /* 导航 */
+  --nav-bg: var(--gray-900);
+  --nav-border: var(--gray-800);
+  --nav-item-text: var(--gray-300);
+  --nav-item-hover: var(--gray-800);
+  --nav-item-active: rgba(59, 130, 246, 0.2);
+  --nav-item-active-text: var(--primary-400);
+
+  /* 侧边栏 */
+  --sidebar-bg: var(--gray-900);
+  --sidebar-border: var(--gray-800);
+  --sidebar-item-text: var(--gray-300);
+  --sidebar-item-hover: var(--gray-800);
+  --sidebar-item-active: rgba(59, 130, 246, 0.2);
+  --sidebar-item-active-text: var(--primary-400);
+
+  /* 状态指示器 */
+  --status-success-bg: rgba(52, 211, 153, 0.2);
+  --status-success-text: #a7f3d0;
+  --status-success-border: rgba(52, 211, 153, 0.3);
+  
+  --status-warning-bg: rgba(251, 191, 36, 0.2);
+  --status-warning-text: #fde68a;
+  --status-warning-border: rgba(251, 191, 36, 0.3);
+  
+  --status-danger-bg: rgba(248, 113, 113, 0.2);
+  --status-danger-text: #fecaca;
+  --status-danger-border: rgba(248, 113, 113, 0.3);
+  
+  --status-info-bg: rgba(59, 130, 246, 0.2);
+  --status-info-text: #bfdbfe;
+  --status-info-border: rgba(59, 130, 246, 0.3);
+
+  /* ========== 图标颜色 ========== */
+  --icon-primary: var(--gray-200);
+  --icon-secondary: var(--gray-400);
+  --icon-tertiary: var(--gray-500);
+  --icon-disabled: var(--gray-600);
+  
+  --icon-primary-hover: var(--gray-100);
+  --icon-secondary-hover: var(--gray-300);
+  
+  --icon-success: var(--success);
+  --icon-warning: var(--warning);
+  --icon-danger: var(--danger);
+  --icon-info: var(--info);
+}
+
+/* 系统偏好深色模式的回退 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* 应用深色主题变量 - 直接包含变量定义 */
+    color-scheme: dark;
+    
+    /* 品牌主色 - Primary (Blue) - 深色模式 */
+    --color-primary-50: #1e3a8a;
+    --color-primary-100: #1e40af;
+    --color-primary-200: #1d4ed8;
+    --color-primary-300: #2563eb;
+    --color-primary-400: #3b82f6;
+    --color-primary-500: #60a5fa;
+    --color-primary-600: #93c5fd;
+    --color-primary-700: #bfdbfe;
+    --color-primary-800: #dbeafe;
+    --color-primary-900: #eff6ff;
+    
+    /* 背景色 - 深色模式 */
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card: #1a1a1a;
+    --card-foreground: #ededed;
+    --popover: #1a1a1a;
+    --popover-foreground: #ededed;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #262626;
+    --secondary-foreground: #ededed;
+    --muted: #262626;
+    --muted-foreground: #a3a3a3;
+    --accent: #262626;
+    --accent-foreground: #ededed;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #fef2f2;
+    --border: #262626;
+    --input: #262626;
+    --ring: #3b82f6;
+    
+    /* 功能色 - 深色模式 */
+    --color-success: #16a34a;
+    --color-success-light: #166534;
+    --color-success-dark: #14532d;
+    
+    --color-warning: #d97706;
+    --color-warning-light: #92400e;
+    --color-warning-dark: #78350f;
+    
+    --color-error: #dc2626;
+    --color-error-light: #991b1b;
+    --color-error-dark: #7f1d1d;
+    
+    --color-info: #0284c7;
+    --color-info-light: #075985;
+    --color-info-dark: #0c4a6e;
+  }
+}
